@@ -9,5 +9,4 @@ export default ({comments}) => {
     return <ul>
     {renderedComments}
     </ul>
-    
 };
