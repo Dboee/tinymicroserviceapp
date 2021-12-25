@@ -18,17 +18,18 @@ export default () => {
     }, []);
 
     const renderedPosts = Object.values(posts).map(post => {
-        return <div 
-        className="card" 
-        style={{width: "30%", marginBottom: "20px"}}
-        key={post.id}
-        >
-            <div className='card-body'>
-                <h3>{post.title}</h3>
-                <CommentList comments={post.comments}/>
-                <CommentCreate postId={post.id} />
+        return (
+          <div className="card d-flex p-2" key={post.id}>
+          
+            <div
+              className="card-body"
+            >
+              <h3>{post.title}</h3>
+              <CommentList comments={post.comments} />
+              <CommentCreate postId={post.id} />
             </div>
-        </div>
+          </div>
+        );
     } );
     
 
