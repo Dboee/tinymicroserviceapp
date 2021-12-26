@@ -31,20 +31,8 @@ app.get('/events', (req,res) => {
     res.send(events);
 });
 
-app.listen(4005, async () => {
+app.listen(4005, () => {
 
   console.log("Listening on 4005");
 
-  try {
-      const res = await axios.get('http://localhost:4005/events');
-
-      for (let event of res.data) {
-          console.log("Processing event:", event.type);
-
-          handleEvent(event.type, event.data);
-      }
-
-  } catch (error) {
-      console.log(error.message);
-  }
 });
