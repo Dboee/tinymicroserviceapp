@@ -4,7 +4,7 @@ import CommentCreate from '../CommentCreate/CommentCreate';
 import CommentList from '../CommentList/CommentList';
 
 
-export default () => {
+const PostList = () => {
 
     const[posts, setPosts] = useState({});
 
@@ -36,3 +36,5 @@ export default () => {
 
     return <div className="d.flex flex-row flex-wrap justify-content-between">{renderedPosts}</div>
 }
+
+export default PostList;

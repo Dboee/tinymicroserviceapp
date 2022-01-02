@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default ({comments}) => {
+const CommentList = ({comments}) => {
 
     const renderedComments = comments.map(comment => {
         let content;
@@ -24,3 +24,5 @@ export default ({comments}) => {
     {renderedComments}
     </ul>
 };
+
+export default CommentList;
