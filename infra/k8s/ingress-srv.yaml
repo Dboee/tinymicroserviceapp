@@ -4,7 +4,7 @@ metadata:
   name: ingress-srv
   annotations:
     kubernetes.io/ingress.class: nginx
-    nginx.ingress.kubernetes.oi/use-regex: 'true'
+    nginx.ingress.kubernetes.oi/use-regex: "true"
 spec:
   rules:
     - host: posts.com
@@ -24,6 +24,8 @@ spec:
                 name: query-srv
                 port:
                   number: 4002
+# Virker som det er her det ligger et problem, comments fungerer ikke. og når jeg prøver
+# regular expressions i andre paths slutter de å funke også.
           - path: /posts/?(.*)/comments
             pathType: Prefix
             backend:
@@ -31,6 +33,9 @@ spec:
                 name: comments-srv
                 port:
                   number: 4001
+# Her skal egentlig path være mulig å sette som
+#   /?(.*)
+# men da fungerer ikke client appen.
           - path: /
             pathType: Prefix
             backend:
