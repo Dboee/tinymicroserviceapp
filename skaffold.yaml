@@ -12,6 +12,10 @@ build:
     context: comments
     docker:
       dockerfile: Dockerfile
+    sync:
+      manual:
+        - src: 'src/**/*.js'
+          dest: .
   - image: thedaviddelight/event-bus
     context: eventbus
     docker:
