@@ -34,7 +34,7 @@ spec:
                 port:
                   number: 4001
 # Her skal egentlig path være mulig å sette som
-#   /?(.*)
+#   path: /?(.*)
 # men da fungerer ikke client appen.
           - path: /
             pathType: Prefix
